@@ -15,7 +15,7 @@
                 <img src="img/Icon.png" alt="create client">
                 <span>Create client</span>
             </div>
-            <form class="reg" action="index.php">
+            <form class="reg" action="add_to_bd.php" method="post">
                 <div class="info">Personal data</div>
                 <div class="block">
                     <div>
@@ -58,7 +58,7 @@
                 <div class="block">
                     <div>
                         <label for="country">Country</label><br>
-                        <select name="countries">
+                        <select name="country">
                             <?php include_once "countries.php"; ?>
                         </select>
                     </div>
@@ -68,10 +68,9 @@
                     </div>
                 </div>
                 <div class="info">
-                    <input id="submit_btn" type="submit" value="Create client">
+                    <button id="submit_btn" type="submit" name="new_user">Create client</button>
                 </div>
             </form>
 		</div>
 	</body>
-    <?php include_once "footer.php"; ?>
 </html>

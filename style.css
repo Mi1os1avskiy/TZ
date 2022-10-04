@@ -172,8 +172,11 @@ label > span {
 #submit_btn {
     color: #fff;
     background: #0D6EFD;
+    padding: 7px 12px;
     width: auto;
     cursor: pointer;
+    border: none;
+    border-radius: 6px;
 }
 
 #submit_btn:hover {
