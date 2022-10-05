@@ -13,6 +13,7 @@ html {
 
 a {
     text-decoration: none;
+    color: #000;
 }
 
 a:visited {
@@ -118,6 +119,18 @@ th  img {
     padding-left: 16px;
 }
 
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.pagination li {
+    list-style-type: none;
+    padding: 7px 12px;
+    border: 1px solid grey;
+}
+
 .info {
     font-weight: 600;
     padding: 16px 24px;
@@ -173,6 +186,7 @@ label > span {
     color: #fff;
     background: #0D6EFD;
     padding: 7px 12px;
+    height: 38px;
     width: auto;
     cursor: pointer;
     border: none;

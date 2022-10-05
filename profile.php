@@ -10,40 +10,79 @@
         <img src="img/Star.png" alt="star">
     </header>
     <body>
+    <?php
+        $value = $_GET['id'];
+
+        $pdo = new PDO('mysql:host=localhost;dbname=bd_tz', 'root', 'root');
+
+        $query = $pdo->prepare('SELECT * FROM `users` WHERE id LIKE (:value)');
+        $query->bindParam(':value',$value);
+        $query->execute();
+        while ($row = $query->fetch(PDO::FETCH_OBJ)) {
+            $id = $row->id;
+            $first = $row->first;
+            $last = $row->last;
+            $email = $row->email;
+            $address1 = $row->address1;
+            $address2 = $row->address2;
+            $city = $row->city;
+            $zip = $row->zip;
+            $country = $row->country;
+            $state = $row->state;
+            $vip = $row->vip;
+            $active = $row->active;
+        }
+    ?>
     <div class="container">
         <div class="profile_header">
             <div>
                 <img src="img/Icon.png" alt="create client">
                 <span>User profile</span>
             </div>
-            <div>
-                <input type="button" value="Deactivate" class="deactivate">
-                <button class="active">Active</button>
-            </div>
+            <form action="activate.php" method="post">
+                <?php
+                    if ($active == 1) {
+                        echo '<input type="submit" value="Deactivate" class="deactivate" name="' . $value . '"><button class="active">Active</button>';
+                    }
+                    else {
+                        echo '<input type="submit" value="Activate" class="activate" name="' . $value . '"><button class="inactive">Inactive</button>';
+                    }
+                ?>
+            </form>
         </div>
         <div class="user_info">
             <img src="img/Union.png" alt="union">
-            <div class="bold">User id</div>
-            <div class="bold">User email</div>
-            <div>User name and surname</div>
-            <div class="bold vip"><img src="img/Subtract.png" alt="VIP"> VIP</div>
+            <?php
+                echo '<div class="bold">#' . $id . '</div>';
+                echo '<div class="bold">' . $email . '</div>';
+                echo '<div>' . $first . ' ' . $last . '</div>';
+                if ($vip) {
+                    echo '<div class="bold vip"><img src="img/Subtract.png" alt="VIP"> VIP</div>';
+                }
+            ?>
         </div>
-        <form class="reg" action="index.php">
+        <form class="reg" action="change_in_bd.php" method="post">
             <div class="info">Personal data</div>
             <div class="block">
                 <div>
                     <label for="first">First name <span>*</span></label><br>
-                    <input type="text" name="first" required>
+                    <?php
+                        echo '<input type="text" name="first" required value="' . $first . '">';
+                    ?>
                 </div>
                 <div>
                     <label for="last">Last name <span>*</span></label><br>
-                    <input type="text" name="last" required>
+                    <?php
+                        echo '<input type="text" name="last" required value="' . $last . '">';
+                    ?>
                 </div>
             </div>
             <div class="block">
                 <div>
                     <label for="email">Email <span>*</span></label><br>
-                    <input type="email" name="email" required>
+                    <?php
+                        echo '<input type="email" name="email" required value="' . $email . '">';
+                    ?>
                 </div>
                 <div>
                     <div class="mb29"></div>
@@ -55,21 +94,29 @@
             <div class="block">
                 <div>
                     <label for="address1">Address line 1</label><br>
-                    <input type="text" name="address1" placeholder="Street, Building">
+                    <?php
+                        echo '<input type="text" name="address1" value="' . $address1 . '">';
+                    ?>
                 </div>
                 <div>
                     <label for="address2">Address line 2</label><br>
-                    <input type="text" name="address2" placeholder="Appartment, Suite, Space">
+                    <?php
+                        echo '<input type="text" name="address2" value="' . $address2 . '">';
+                    ?>
                 </div>
             </div>
             <div class="block">
                 <div>
                     <label for="city">City</label><br>
-                    <input type="text" name="city" placeholder="New York">
+                    <?php
+                        echo '<input type="text" name="city" value="' . $city . '">';
+                    ?>
                 </div>
                 <div>
                     <label for="zip">ZIP code</label><br>
-                    <input type="number" name="zip" maxlength="6" placeholder="123456">
+                    <?php
+                        echo '<input type="number" name="zip" value="' . $zip . '">';
+                    ?>
                 </div>
             </div>
             <div class="block">
@@ -81,7 +128,9 @@
                 </div>
                 <div>
                     <label for="state">State</label><br>
-                    <input type="text" name="state" placeholder="NY">
+                    <?php
+                        echo '<input type="text" name="state" value="' . $state . '">';
+                    ?>
                 </div>
             </div>
             <div class="info">

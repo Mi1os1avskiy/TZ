@@ -244,7 +244,10 @@ $countries = array("AF" => "Afghanistan",
 "ZM" => "Zambia",
 "ZW" => "Zimbabwe");
 foreach($countries as $key => $value) {
-    ?>
-    <option value="<?= $key ?>" title="<?= htmlspecialchars($value) ?>"><?= htmlspecialchars($value) ?></option>
-    <?php
+    if ($key === $country) {
+        echo '<option selected value="' . $key . '" title="' . htmlspecialchars($value) . '">' .htmlspecialchars($value) . '</option>';
     }
+    else {
+        echo '<option value="' . $key . '" title="' . htmlspecialchars($value) . '">' .htmlspecialchars($value) . '</option>';
+    }
+}

@@ -52,7 +52,7 @@
                     </div>
                     <div>
                         <label for="zip">ZIP code</label><br>
-                        <input type="number" name="zip" maxlength="6" placeholder="123456">
+                        <input type="number" name="zip" placeholder="123456">
                     </div>
                 </div>
                 <div class="block">
