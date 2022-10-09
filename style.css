@@ -1,0 +1,304 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "SF Pro Display", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:visited {
+    color: #000;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.mb29 {
+    margin-bottom: 29px;
+}
+
+.fw400 {
+    font-weight: 400;
+}
+
+.blue {
+    color: #0D6EFD;
+}
+
+header {
+    padding: 16px 24px;
+    border-bottom: 1px solid #EAECEF;
+}
+
+.create_btn {
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #6C757D;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.create_btn:hover {
+    background-color: #545a5f;
+}
+
+input, table {
+    border: solid 1px #CFD3DA;
+}
+
+.container {
+    display: block;
+    margin: 0 168px;
+}
+
+.list_header, .profile_header {
+    display: flex;
+    justify-content: space-between;
+    height: 82px;
+    padding: 24px 0;
+}
+
+.registration_header {
+    height: 82px;
+    padding: 24px 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.registration_header img {
+    width: 16px;
+    margin: 0 12px;
+}
+
+.list_header span {
+    height: 42px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.search input {
+    width: 260px;
+    height: 38px;
+    margin-bottom: 16px;
+    padding: 7px 12px;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-radius: 6px;
+}
+
+thead {
+    color: #AFB5BD;
+    font-size: 14px;
+    font-weight: 400;
+    background: #F9FAFA;
+}
+
+th {
+    text-align: left;
+    padding: 16px;
+}
+
+th  img {
+    padding-left: 16px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.pagination li {
+    list-style-type: none;
+    padding: 7px 12px;
+    border: 1px solid grey;
+}
+
+.info {
+    font-weight: 600;
+    padding: 16px 24px;
+    background: #F9FAFA;
+}
+
+.info:first-child {
+    border-bottom: solid 1px #CFD3DA;
+    margin-bottom: 16px;
+}
+
+.reg {
+    border: 1px solid #DFE2E6;
+    border-radius: 6px;
+    max-width: 800px;
+}
+
+.reg input, .reg select {
+    margin: 8px 0;
+    height: 38px;
+    width: 319px;
+    padding: 7px 12px;
+    border-radius: 6px;
+}
+
+.reg hr {
+    margin: 16px 24px 24px 24px;
+    border: none;
+    background-color: #DFE2E6;
+    height: 1px;
+    max-width: 650px;
+}
+
+.reg p {
+    font-weight: 600;
+    margin: 0 0 8px 24px;
+}
+
+.block {
+    display: flex;
+    padding: 8px 24px;
+}
+
+.block div:first-child {
+    margin-right: 16px;
+}
+
+label > span {
+    color: #ff0000;
+}
+
+#submit_btn {
+    color: #fff;
+    background: #0D6EFD;
+    padding: 7px 12px;
+    height: 38px;
+    width: auto;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+#submit_btn:hover {
+    background: #0061f5;
+}
+
+.activate {
+    font-weight: 600;
+    padding: 7px 12px;
+    background: #198754;
+    color: #fff;
+    border-radius: 6px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.activate:hover {
+    background: #107246;
+}
+
+.deactivate {
+    font-weight: 600;
+    padding: 7px 12px;
+    background: #DC3545;
+    color: #fff;
+    border-radius: 6px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.deactivate:hover {
+    background: #c61d2f;
+}
+
+.active {
+    font-weight: 600;
+    border: none;
+    padding: 7px 12px;
+    background: #A3CFBB;
+    border-color: #A3CFBB;
+    border-radius: 800px;
+}
+
+.inactive {
+    font-weight: 600;
+    border: none;
+    padding: 7px 12px;
+    background: #DFE2E6;
+    border-color: #DFE2E6;
+    border-radius: 800px;
+}
+
+.active_clients {
+    font-weight: 600;
+    border: none;
+    padding: 4px 12px;
+    color: #198754;
+    background-color: #fff;
+    border: 1px solid #D1E7DD;
+    border-radius: 800px;
+}
+
+.inactive_clients {
+    font-weight: 600;
+    border: none;
+    padding: 4px 12px;
+    color: #6D757D;
+    background-color: #fff;
+    border: 1px solid #EAECEF;
+    border-radius: 800px;
+}
+
+.verified {
+    height: 29px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 7px 12px;
+    background: #418558;
+    border-color: #418558;
+    border-radius: 800px;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    background: #F9FAFA;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+.user_info div {
+    margin-left: 16px;
+}
+
+.vip {
+    color: #FD7E14;
+}
+
+#profile_btn {
+    color: #fff;
+    background: #6C757D;
+    width: auto;
+    cursor: pointer;
+}
+
+#profile_btn:hover {
+    background: #5e656c;
+}
